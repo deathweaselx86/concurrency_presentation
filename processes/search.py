@@ -23,7 +23,7 @@ def get_searches(filename):
         p.join()
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Counting in ranges of 5')
+    parser = argparse.ArgumentParser(description='searching for stuff')
     parser.add_argument('filename', metavar='f', type=str, help='a file to read')
     
     args = parser.parse_args()
