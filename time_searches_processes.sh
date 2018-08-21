@@ -1,1 +1,1 @@
-time python3 processes/search.py searchterms.txt 
+time python3 processes/search.py

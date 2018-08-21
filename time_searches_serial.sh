@@ -1,1 +1,1 @@
-time python3 serial/search.py searchterms.txt 
+time python3 serial/search.py

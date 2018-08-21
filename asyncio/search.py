@@ -6,24 +6,12 @@ import asyncio
 async def search(query):
     print('Searching for %s' % query)
     req = requests.get('http://google.com/search', params={ 'q': query  })
-    print('Saving %s query to file %s.txt' %  (query, query))
-    searchFile = '%s.txt' % query
-    with open(searchFile, 'w') as searchOutput:
-        searchOutput.write(req.text)
 
-def get_searches(filename):
+def get_searches(searches):
     loop = asyncio.get_event_loop()
-    tasks = []
-    with open(filename, 'r') as searches:
-        for query in searches:
-            query = query.strip()
-            tasks.append(asyncio.ensure_future(search(query)))
+    tasks = [asyncio.ensure_future(search(query)) for query in searches]
     loop.run_until_complete(asyncio.wait(tasks))
     loop.close()
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='searching for stuff')
-    parser.add_argument('filename', metavar='f', type=str, help='a file to read')
-    
-    args = parser.parse_args()
-    get_searches(args.filename)
+    get_searches(['dog','cat','ferret', 'betta', 'rabbit'])

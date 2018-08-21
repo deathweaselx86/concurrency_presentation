@@ -1,5 +1,3 @@
-import argparse
-
 def trial_division(n):
     divisors = []
     current_factor = 2
@@ -9,17 +7,11 @@ def trial_division(n):
             n /= current_factor
         else:
             current_factor += 1
-    if divisors:
-        return divisors
-    else:
-        return 'prime'
+    print(divisors)
 
 def get_divisors(numbers):
     for n in numbers:
-        print(n,': ',trial_division(n))
+        trial_division(n)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='factoring')
-    parser.add_argument('numbers', metavar='N', type=int, nargs=5)
-    args = parser.parse_args()
-    get_divisors(args.numbers)
+    get_divisors([907141, 907142, 907143, 907144, 907145])

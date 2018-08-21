@@ -1,1 +1,1 @@
-time python3 threads/search.py searchterms.txt 
+time python3 threads/search.py
