@@ -1,4 +1,3 @@
-#!/usr/local/bin/python3 
 import requests
 from threading import Thread
 
@@ -9,7 +8,6 @@ def search(query):
 def get_searches(searches):
     threads = []
     for query in searches:
-        query = query.strip()
         t = Thread(target=search, args=(query,))
         t.start()
         threads.append(t)

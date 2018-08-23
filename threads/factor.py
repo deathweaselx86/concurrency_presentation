@@ -1,4 +1,3 @@
-import argparse
 from threading import Thread
 
 def trial_division(n):

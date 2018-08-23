@@ -1,4 +1,3 @@
-#!/usr/local/bin/python3 
 import requests
 
 def search(query):
@@ -7,7 +6,7 @@ def search(query):
 
 def get_searches(searches):
     for query in searches:
-        search(query.strip())
+        search(query)
 
 if __name__ == '__main__':
     get_searches(['dog','cat','ferret', 'betta', 'rabbit'])

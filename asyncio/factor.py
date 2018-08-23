@@ -1,4 +1,3 @@
-import argparse
 import asyncio
 
 async def trial_division(n):
